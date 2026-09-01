@@ -1,8 +1,8 @@
 [Name]
-Locket Pro Bypass
+Locket Gold Bypass
 
 [Script]
-locket.js = type=http-response,pattern=^https?:\/\/api\.locket\.camera\/.*,requires-body=1,max-size=524288,script-path=[Link_Raw_Github_Của_Bạn]
+locket.js = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/.*,requires-body=1,max-size=524288,script-path=https://raw.githubusercontent.com/andanh447/shadowrocket-crack/main/locket.js
 
 [URL Rewrite]
-^https?:\/\/api\.locket\.camera\/.* url script-response-body [Link_Raw_Github_Của_Bạn]
+^https?:\/\/api\.revenuecat\.com\/v1\/.* url script-response-body https://raw.githubusercontent.com/andanh447/shadowrocket-crack/main/locket.js
