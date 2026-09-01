@@ -1,35 +1,8 @@
-/*
- * Script: Locket Pro Bypass
- * Ngày hết hạn: 1111-01-01T00:00:00Z
- */
+[Name]
+Locket Pro Bypass
 
-let body = $response.body;
+[Script]
+locket.js = type=http-response,pattern=^https?:\/\/api\.locket\.camera\/.*,requires-body=1,max-size=524288,script-path=[Link_Raw_Github_Của_Bạn]
 
-try {
-    let obj = JSON.parse(body);
-
-    if (obj) {
-        if (!obj.data) obj.data = {};
-        if (!obj.data.subscriber) obj.data.subscriber = {};
-
-        obj.data.subscriber.status = "active";
-        obj.data.subscriber.entitlements = {
-            "pro": {
-                "is_active": true,
-                "expires_date": "1111-01-01T00:00:00Z"
-            }
-        };
-        obj.data.subscriber.subscriptions = {
-            "locket.gold.yearly": {
-                "is_active": true,
-                "expires_date": "1111-01-01T00:00:00Z"
-            }
-        };
-    }
-
-    body = JSON.stringify(obj);
-} catch (e) {
-    console.log("Lỗi xử lý JSON Locket: " + e);
-}
-
-$done({ body });
+[URL Rewrite]
+^https?:\/\/api\.locket\.camera\/.* url script-response-body [Link_Raw_Github_Của_Bạn]
